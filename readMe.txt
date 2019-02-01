@@ -19,16 +19,22 @@ Back-End
     [X] Add Services folder that will contain all the services of the application
        [X] Define a function to get all customers inside the database
        [X] Define a method to get a single customers from the database
-       [X]  Define a method to add customers into a database
+       [X] Define a method to add customers into a database
+       [X] Define a method to update a specific customer
+       [X] Define a method to delete specific customer
 
-    [] Add an API folder to contain all the API's of the application
-       [] Define an API to get get all customers from services to the front-end
-       [] Define an api to get single customers
+    [X] Add an API folder to contain all the API's of the application
+       [X] Define an API to get get all customers from services to the front-end
+       [X] Define an api to get single customers
+       [X] Define an api to post a single customer
+       [X] Define an api to update a single customer, it gonna be a post request
+       [X] Define an api to delete single customer, its gonna be a post request 
 
-    [] API end points
+    [x] API end points
        [X] /api/customers
        [X] /api/customers/:id
        [X] /api/customers/add
+       [X] /api/customers/update/:id
+       [X] /api/customers/delete/:id
 
-      
 Front-End

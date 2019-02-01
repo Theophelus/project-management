@@ -25,13 +25,35 @@ module.exports = function services(pool) {
             customer.city
         ]
         //define a variable to store SQL
-        await pool.query('INSERT INTO customers(first_name, last_name, phone, email, addresses, city) VALUES($1, $2, $3, #4, $5, $,6)',  [data]);
+        await pool.query('INSERT INTO customers(first_name, last_name, phone, email, addresses, city) VALUES($1, $2, $3, #4, $5, $,6)', [data]);
+    }
+    //define a method to update a specific customer
+    let updates = async (customer) => {
+        let data = [
+            customer.first_name,
+            customer.last_name,
+            customer.phone,
+            customer.email,
+            customer.address,
+            customer.city,
+            customer.id
+        ]
+        //define a variable to store SQL
+        let updateQuery = `UPDATE customers SET first_name = $1, last_name = $2, phone = $3, email = $4, addresses = $5, city = $6 where id = &7`;
+        return await pool.query(updateQuery, data)
+    }
+
+    //define  method to delete seingle customer
+    let deleteById = async(id)=> {
+        return await pool.query(`DELETE FROM customers WHERE id = $1`, [id]);
     }
 
     return {
         getCustomers,
         getSingleCustomer,
-        add
+        add,
+        updates,
+        deleteById
     }
 
 }

@@ -39,26 +39,65 @@ module.exports = (services) => {
     }
     let add = async (req, res) => {
         let added = req.body;
-        console.log(added);
-        // try {
+        // console.log(added);
+        try {
 
-        //     let results = await services.add(added);
-        //     res.json({
-        //         status: 'success',
-        //         data: results
-        //     })
-            
-        // } catch (error) {
-        //     res.json({
-        //         status: 'error',
-        //         error: error.stack
-        //     })
-        // }
+            let results = await services.add(added);
+            res.json({
+                status: 'success',
+                data: results
+            })
 
+        } catch (error) {
+            res.json({
+                status: 'error',
+                error: error.stack
+            })
+        }
+    }
+
+    //define an api to update single customer
+    let updates = async (req, res) => {
+        let updated = req.body;
+        try {
+
+            let results = await services.updates(updated);
+            res.json({
+                status: 'success',
+                data: results
+            })
+
+        } catch (error) {
+            res.json({
+                status: 'error',
+                error: error.stack
+            })
+        }
+    }
+
+    //Define an api to delete a single customer
+    let deleteId = async (eq, res) => {
+
+        let delId = req.params.id;
+
+        try {
+            let results = await services.deleteId(delId);
+        res.json({
+            status: `success`,
+            data: results
+        })
+        } catch (error) {
+            res.json({
+                status: `error`,
+                error: error.stack
+            })
+        }
     }
     return {
         getCustomers,
         getSingleCustomer,
-        add
+        add,
+        updates,
+        deleteId
     }
 }

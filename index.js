@@ -46,6 +46,9 @@ app.use(express.static('public'));
 app.get('/api/customers', api.getCustomers);
 app.get('/api/customers/:id', api.getSingleCustomer);
 app.post('/api/customers/add', api.add);
+app.post('/api/customers/update/:id', api.updates);
+app.post('api/customers/delete/:id', api.deleteId);
+
 
 let PORT = process.env.PORT || 3000
 app.listen(PORT,()=> console.log(`Server starting at PORT ${PORT}`));
