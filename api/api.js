@@ -58,11 +58,12 @@ module.exports = (services) => {
 
     //define an api to update single customer
     let updates = async (req, res) => {
-        let updated = req.body;
+        let updated = req.body.;
         try {
 
             let results = await services.updates(updated);
             res.json({
+                // message: `${}`
                 status: 'success',
                 data: results
             })
