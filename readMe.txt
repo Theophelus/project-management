@@ -38,3 +38,10 @@ Back-End
        [X] /api/customers/delete/:id
 
 Front-End
+   [X] Setup Vue.js cli for front-end
+   [X] Add google font cdn file
+   [] Vue Components
+      []
+      
+Vue Routers
+   [] Setup vue routers
