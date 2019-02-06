@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+      <!-- <div class="container"> -->
         <a href="../" class="navbar-brand">DASHBOARD</a>
         <button
           class="navbar-toggler"
@@ -25,8 +25,8 @@
           </ul>
         </div>
       </div>
-    </div>
-    <router-view/>
+    <!-- </div> -->
+    <router-view></router-view>
   </div>
 </template>
 

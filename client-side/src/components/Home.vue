@@ -1,29 +1,27 @@
 <template>
-  <div class="home">
-    <div class="container">
-          <h1>WELCOME WORLD</h1>
-      </div>    
-  </div> 
+  <div class="container customers">
+    <div class="page-header">
+      <h1>MANAGEMENST SYSTEMS</h1>
+    </div>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import Dashboard from "@/components/Dashboard.vue";
-
 export default {
   name: "home",
-  components: {
-  }
+  data() {
+    return {};
+  },
 
+  methods: {
+    getCustomers() {
+      axios.get("http://localhost:3000/api/customers"),
+        then(res => {
+          console.log(res.body);
+        });
+    }
+  }
 };
 </script>
-
-<style>
-.home h1 {
-
-  margin-top: 60px;
-}
-  
-</style>
 
 
