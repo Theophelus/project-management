@@ -41,7 +41,12 @@ Front-End
    [X] Setup Vue.js cli for front-end
    [X] Add google font cdn file
    [] Vue Components
-      []
+      [] Home Component
+      [] About Component
+      [] Add user Component
       
 Vue Routers
    [] Setup vue routers
+
+
+  

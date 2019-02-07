@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const flash = require("express-flash");
 const session = require("express-session");
-const Services = require("./Services/services");
-const Api = require("./api/api");
+const Services = require("../Services/services");
+const Api = require("../api/api");
 const pg = require("pg");
 
 const Pool = pg.Pool;
