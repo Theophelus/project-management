@@ -1,7 +1,7 @@
 import Api from "../services/App";
 
 export default {
-  fetchPosts() {
+  fetchCustomers() {
     return Api().get("/api/customers");
   }
 };
