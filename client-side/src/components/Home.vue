@@ -1,7 +1,7 @@
 <template>
   <div class="container customers">
     <div class="page-header">
-      <h1>MANAGEMENST SYSTEMS</h1>
+      <!-- <h1>MANAGEMENST SYSTEMS</h1> -->
     </div>
     <div class="customer-content">
       <table class="table">
@@ -59,6 +59,6 @@ export default {
 
 <style scope>
 .customers .page-header {
-  margin-top: 6em;
+  margin-top: 3em;
 }
 </style>
