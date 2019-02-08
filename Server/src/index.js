@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const flash = require("express-flash");
+const cors =require('cors');
+const morgan = require('morgan')
 const session = require("express-session");
 const Services = require("../Services/services");
 const Api = require("../api/api");
@@ -43,15 +45,18 @@ function errorHandler(err, req, res, next) {
   });
 }
 // parse application/json
+app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(cors());
+// app.use(bodyParser.json());
 //configure public for=lder for static files
 app.use(express.static("public"));
 
 app.get("/api/customers", api.getCustomers);
 app.get("/api/customers/:id", api.getSingleCustomer);
 app.post("/api/customers/add", api.add);
-// app.update("/api/customers/update/:id", api.updates);
-// app.delete("aprsi/customers/delete/:id", api.deleteId);
+app.put("/api/customers/update/:id", api.updates);
+app.delete("aprsi/customers/delete/:id", api.deleteId);
 
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server starting at PORT ${PORT}`));

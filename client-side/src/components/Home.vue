@@ -7,26 +7,34 @@
 </template>
 
 <script>
-// import Api from "../services/App";
+// import axios from "../services/App";
 
 import PostServices from "../services/postService.js";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      customers: []
+    };
   },
   mounted() {
+    // this.fetchPosts();
     this.getPosts();
   },
   methods: {
-  async getPosts () {
+    // fetchPosts() {
+    //   axios.get("/api/customers").then(response => console.log(response.data));
+    // }
+    async getPosts () {
 
       const response = await PostServices.fetchPosts();
       console.log(response.data);
+      this.customers = response.data;
     }
   }
 };
 </script>
 
+<style scope>
 
-
+</style>
