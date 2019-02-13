@@ -39,8 +39,11 @@ export default {
 };
 </script>
 <style scoped>
+
 body {
-  background-color: black;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 </style>
 

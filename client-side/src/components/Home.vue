@@ -2,8 +2,9 @@
   <div class="customers">
     <div class="container">
       <div class="page-header">
-        <h6>MANAGEMENST SYSTEMS</h6>
+        <h4>MANAGE CUSTOMERS</h4>
       </div>
+      <br>
       <div class="customer-content">
         <table class="table">
           <thead>
@@ -26,6 +27,9 @@
               <td>{{customer.email}}</td>
               <td>{{customer.addresses}}</td>
               <td>{{customer.city}}</td>
+              <td> 
+                <router-link class="btn btn-secondary" style="background-color:#f75940" v-bind:to="'/customer/'+customer.id">Quick View</router-link>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -61,14 +65,16 @@ export default {
 <style scope>
 .customers {
   /* background-color: #f8f9f9; */
-  padding-top: 4em;
+  padding-top: 2em;
   /* padding-bottom: 2em; */
   clear: both;
   width: 100%;
   height: 100%;
   display: block;
 }
-.customers .page-header {
-  margin-top: 3em;
+.customers  .page-header {
+  margin-top: 2em;
+  box-shadow: 0 4px 2px -2px #f75940;
+  border-bottom: 1px solid #1a535c;
 }
 </style>

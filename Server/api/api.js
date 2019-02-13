@@ -1,5 +1,4 @@
 module.exports = (services) => {
-
     //Define an API to get all customers
     let getCustomers = async (req, res) => {
         try {

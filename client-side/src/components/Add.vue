@@ -2,8 +2,9 @@
   <div class="add">
     <div class="container">
       <div class="page-header">
-        <h4>Add Customers</h4>
+        <h4>ADD CUSTOMERS</h4>
       </div>
+      <br>
       <form v-on: submit="addCustomer">
         <div class="row">
           <div class="col-md-7 col-md-pull-5">
@@ -66,7 +67,7 @@
             </div>
           </div>
           <div class="form-group">
-            <input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
+            <input type="submit" class="btn btn-primary btn-send-message" value="Add customer">
           </div>
         </div>
       </form>
@@ -82,12 +83,12 @@ export default {
   data() {
     return {
       customer: {},
-      full_name: '',
-      last_name: '',
-      phone: '',
-      email: '',
-      address: '',
-      city: ''
+      full_name: "",
+      last_name: "",
+      phone: "",
+      email: "",
+      address: "",
+      city: ""
     };
   },
 
@@ -127,12 +128,14 @@ export default {
 
 <style scoped>
 .add .page-header {
-  margin-top: 1em;
+  margin-top: 2em;
+  box-shadow: 0 4px 2px -2px #f75940;
+  border-bottom: 1px solid #1a535c;
 }
 
 .add {
   background-color: #f8f9f9;
-  padding-top: 4em;
+  padding-top: 2em;
   /* padding-bottom: 2em; */
   clear: both;
   width: 100%;
