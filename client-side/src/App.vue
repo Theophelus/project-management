@@ -38,3 +38,9 @@ export default {
   name: "app"
 };
 </script>
+<style scoped>
+body {
+  background-color: black;
+}
+</style>
+
