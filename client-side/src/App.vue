@@ -20,6 +20,9 @@
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/add" class="nav-link">Add Customer</router-link>
+            </li>
+            <li class="nav-item">
               <router-link to="/about" class="nav-link">About</router-link>
             </li>
           </ul>

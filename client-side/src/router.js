@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./components/Home.vue";
-// import Customers from "./components/Customers.vue";
+import Add from "./components/Add.vue";
 
 Vue.use(Router);
 
@@ -14,11 +14,11 @@ export default new Router({
       name: "home",
       component: Home
     },
-    // {
-    //   path: "/customers",
-    //   name: "customers",
-    //   component: Customers
-    // },
+    {
+      path: "/add",
+      name: "add",
+      component: Add
+    },
     {
       path: "/about",
       name: "about",

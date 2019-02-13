@@ -1,7 +1,7 @@
 <template>
   <div class="container customers">
     <div class="page-header">
-      <!-- <h1>MANAGEMENST SYSTEMS</h1> -->
+      <h6>MANAGEMENST SYSTEMS</h6>
     </div>
     <div class="customer-content">
       <table class="table">
@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import PostServices from "../services/postService.js";
+import axios from "../services/App.js";
+// import PostServices from "../services/postService.js";
 
 export default {
   name: "home",
@@ -43,16 +44,14 @@ export default {
     };
   },
   mounted() {
-    this.getCustomers();
-  },
-  methods: {
-    async getCustomers() {
-      const response = await PostServices.fetchCustomers();
-      if (response.data) {
-        let data = response.data.data;
-        data.map(current => this.customers.push(current));
-      }
-    }
+    axios()
+      .get("/api/customers")
+      .then(response => {
+        if (response.data) {
+          let data = response.data.data;
+          data.map(current => this.customers.push(current));
+        }
+      });
   }
 };
 </script>
