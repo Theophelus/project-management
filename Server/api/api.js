@@ -18,7 +18,6 @@ module.exports = (services) => {
 
     //Define an API to single customers
     let getSingleCustomer = async (req, res) => {
-
         //define a variable to get single customers id
         let id = req.params.id
         console.log(id)
@@ -37,11 +36,11 @@ module.exports = (services) => {
         }
     }
     let add = async (req, res) => {
-        let added = req.body;
+        // let added = req.body;
         // console.log(added);
         try {
 
-            let results = await services.add(added);
+            let results = await services.add(req.body);
             res.json({
                 status: 'success',
                 data: results
