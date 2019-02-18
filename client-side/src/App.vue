@@ -20,7 +20,9 @@
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/add" class="nav-link">Add Customer</router-link>
+              <router-link to="/add" class="nav-link">
+                <i class="fas fa-plus"></i> Add
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/about" class="nav-link">About</router-link>
@@ -39,11 +41,15 @@ export default {
 };
 </script>
 <style scoped>
-
-body {
+#app {
+  background-color: #f8f9f9;
+  height: 100vh;
   margin: 0px;
   padding: 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+.fas {
+  color: #f75940;
 }
 </style>
 

@@ -23,7 +23,7 @@ export default {
   /* padding-bottom: 2em; */
   clear: both;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: block;
 }
 .customerDetails .page-header {

@@ -5,16 +5,16 @@
         <h4>ADD CUSTOMERS</h4>
       </div>
       <br>
-      <form v-on: submit="addCustomer">
+      <form @submit.prevent="addCustomer">
         <div class="row">
           <div class="col-md-7 col-md-pull-5">
             <div class="form-group">
               <input
                 type="text"
                 class="form-control"
-                placeholder="Full Name"
-                name="full_name"
-                v-model="full_name"
+                placeholder="First Name"
+                name="first_name"
+                v-model="first_name"
               >
             </div>
             <div class="form-group">
@@ -29,13 +29,13 @@
             </div>
             <div class="form-group">
               <textarea
-                name="address"
+                name="addresses"
                 id="message"
                 cols="30"
                 rows="20"
                 class="form-control"
-                placeholder="addree"
-                v-model="address"
+                placeholder="address"
+                v-model="addresses"
               ></textarea>
               <!-- <span class="error" v-if="errors.has('messages')">{{ errors.first('messages') }}</span> -->
             </div>
@@ -82,12 +82,11 @@ export default {
   name: "add",
   data() {
     return {
-      customer: {},
-      full_name: "",
+      first_name: "",
       last_name: "",
       phone: "",
       email: "",
-      address: "",
+      addresses: "",
       city: ""
     };
   },
@@ -96,30 +95,30 @@ export default {
     addCustomer(e) {
       //Define a variable to hold this
       let self = this;
-      //check if all fields are filled
+      // check if all fields are filled
       if (
         !self.first_name ||
         !self.last_name ||
         !self.phone ||
         !self.email ||
-        !self.address ||
+        !self.addresses ||
         !self.city
       ) {
         console.log("Please fill all fields");
       } else {
-        let customers = {
-          first_name: self.first_name,
-          last_name: self.last_name,
-          phone: self.phone,
-          email: self.email,
-          address: self.address,
-          city: self.city
-        };
-        axios()
-          .post("/api/customers/add", customers)
-          .then(response => console.log(response.data));
+      let customers = {
+        first_name: self.first_name,
+        last_name: self.last_name,
+        phone: self.phone,
+        email: self.email,
+        addresses: self.addresses,
+        city: self.city
+      };
+      // console.log(customers);
+      axios()
+        .post("/api/customers/add", customers)
+        .then(response => console.log(response.data));
       }
-
       e.preventDefault();
     }
   }
@@ -132,17 +131,15 @@ export default {
   box-shadow: 0 4px 2px -2px #f75940;
   border-bottom: 1px solid #1a535c;
 }
-
 .add {
   background-color: #f8f9f9;
   padding-top: 2em;
   /* padding-bottom: 2em; */
   clear: both;
   width: 100%;
-  height: vh;
+  /* height: vh; */
   display: block;
 }
-
 .heading-meta {
   margin-bottom: 5px;
   display: block;
@@ -152,7 +149,6 @@ export default {
   font-weight: 500;
   letter-spacing: 5px;
 }
-
 .form-heading {
   font-size: 18px;
   margin-bottom: 4em;
@@ -161,7 +157,6 @@ export default {
   letter-spacing: 5px;
   line-height: 1.8;
 }
-
 .form-feature {
   text-align: left;
   width: 100%;
@@ -169,7 +164,6 @@ export default {
   margin-bottom: 40px;
   position: relative;
 }
-
 .form-feature .form-icon {
   position: absolute;
   top: 0;
