@@ -56,7 +56,7 @@ app.get("/api/customers", api.getCustomers);
 app.get("/api/customers/:id", api.getSingleCustomer);
 app.post("/api/customers/add", api.add);
 app.put("/api/customers/update/:id", api.updates);
-app.delete("aprsi/customers/delete/:id", api.deleteId);
+app.delete("api/customers/delete/:id", api.deleteId);
 
 let PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server starting at PORT ${PORT}`));

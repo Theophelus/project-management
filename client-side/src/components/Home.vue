@@ -72,13 +72,8 @@ export default {
 
 <style scope>
 .customers {
-  /* background-color: #f8f9f9; */
   padding-top: 2em;
-  /* padding-bottom: 2em; */
   clear: both;
-  /* width: 100%; */
-  /* height: 100%; */
-  /* display: block; */
 }
 .customers .page-header {
   margin-top: 2em;
@@ -89,8 +84,5 @@ export default {
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
 }
 </style>
