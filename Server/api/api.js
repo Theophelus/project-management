@@ -75,19 +75,19 @@ module.exports = (services) => {
     }
 
     //Define an api to delete a single customer
-    let deleteId = async (eq, res) => {
-
-        let delId = req.params.id;
-
+    let deleteById = async (req, res) => {
+        // let id = req.params.id
+        // console.log(id)
         try {
-            let results = await services.deleteId(delId);
-        res.json({
-            status: `success`,
-            data: results
-        })
+            let results = await services.deleteById(req.params.id);
+            res.json({
+                status: 'success',
+                data: results
+            })
+
         } catch (error) {
             res.json({
-                status: `error`,
+                status: 'error',
                 error: error.stack
             })
         }
@@ -97,6 +97,6 @@ module.exports = (services) => {
         getSingleCustomer,
         add,
         updates,
-        deleteId
+        deleteById
     }
 }

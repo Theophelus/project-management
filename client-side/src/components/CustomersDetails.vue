@@ -1,10 +1,14 @@
 <template>
   <div class="container customerDetails">
+    <router-link to="/" class="fas fa-backward">Back</router-link>
+
     <div class="page-header">
       <h4>
         {{customer.first_name}} {{customer.last_name}}
-        <span class="float-right overflow-hidden">
-          <i class="fas fa-trash" style="font-size:18px;color: #FF3C38;" v-on:click="deleteUser"></i>
+        <span
+          class="float-right overflow-hidden delbtn"
+        >
+          <i class="fas fa-trash" v-on:click="deleteUser"></i>
         </span>
       </h4>
     </div>
@@ -42,7 +46,7 @@
           data-animate-effect="fadeInLeft"
         >
           <div class="form-icon">
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map"></i>
           </div>
           <div class="form-text">
             <p>
@@ -55,7 +59,7 @@
           data-animate-effect="fadeInLeft"
         >
           <div class="form-icon">
-            <i class="fas fa-city"></i>
+            <i class="fas fa-map-marked-alt"></i>
           </div>
           <div class="form-text">
             <p>
@@ -98,9 +102,11 @@ export default {
     //Define a function to Delete a specific user
     deleteUser() {
       let vm = this;
-      Axios()
-        .delete(`/api/customers/delete/${vm.$route.params.id}`)
-        .then(response => console.log(response.data.data));
+      console.log(vm.$route.params.id);
+      // Axios()
+      //   .delete(`/api/customers/delete/${vm.$route.params.id}`)
+      //   .then(response => console.log(response.data.data));
+      // .catch(error => console.log(`An error as occured ${error`));
     }
   }
 };
@@ -116,6 +122,32 @@ export default {
   margin-top: 2em;
   box-shadow: 0 4px 2px -2px #f75940;
   border-bottom: 1px solid #1a535c;
+}
+.fa-backward {
+  word-spacing: 1em;
+  margin-left: 10px;
+  color: black;
+}
+.fa-backward:hover {
+  text-decoration: none;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+  cursor: pointer;
+  /* font-size: 20px; */
+  color: #461e1e;
+}
+.fa-trash {
+  font-size: 18px;
+  color: #ff3c38;
+}
+.fa-trash:hover {
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+  cursor: pointer;
+  font-size: 20px;
+  color: #ba4e4e;
 }
 .list-class {
   margin-top: 30px;

@@ -45,7 +45,8 @@ module.exports = function services(pool) {
 
     //define  method to delete seingle customer
     let deleteById = async (id) => {
-        return await pool.query(`DELETE FROM customers WHERE id = $1`, [id]);
+        let delUser = await pool.query(`DELETE FROM customers WHERE id = $1`, [id]);
+        return delUser.rows
     }
 
     return {
