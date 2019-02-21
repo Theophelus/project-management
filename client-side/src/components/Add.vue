@@ -106,18 +106,21 @@ export default {
       ) {
         console.log("Please fill all fields");
       } else {
-      let customers = {
-        first_name: self.first_name,
-        last_name: self.last_name,
-        phone: self.phone,
-        email: self.email,
-        addresses: self.addresses,
-        city: self.city
-      };
-      // console.log(customers);
-      axios()
-        .post("/api/customers/add", customers)
-        .then(response => console.log(response.data));
+        let customers = {
+          first_name: self.first_name,
+          last_name: self.last_name,
+          phone: self.phone,
+          email: self.email,
+          addresses: self.addresses,
+          city: self.city
+        };
+        // console.log(customers);
+        axios()
+          .post("/api/customers/add", customers)
+          .then(response => {
+            console.log(response);
+            if (response.status == 200) this.$router.push({ path: "/" }) ;
+          });
       }
       e.preventDefault();
     }

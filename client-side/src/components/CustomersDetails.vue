@@ -8,7 +8,7 @@
         <span
           class="float-right overflow-hidden delbtn"
         >
-          <i class="fas fa-trash" v-on:click="deleteUser"></i>
+          <i class="fas fa-trash" @click="deleteUser"></i>
         </span>
       </h4>
     </div>
@@ -102,10 +102,14 @@ export default {
     //Define a function to Delete a specific user
     deleteUser() {
       let vm = this;
-      console.log(vm.$route.params.id);
-      // Axios()
-      //   .delete(`/api/customers/delete/${vm.$route.params.id}`)
-      //   .then(response => console.log(response.data.data));
+      // alert(vm.$route.push({ path: "/" }));
+      // console.log(vm.$route.params.id);
+      Axios()
+        .delete(`/api/customers/delete/${vm.$route.params.id}`)
+        .then(response => {
+          if (response.status == 200) vm.$router.push({ path: "/" });
+          // console.log("Something went wrong");
+        });
       // .catch(error => console.log(`An error as occured ${error`));
     }
   }
